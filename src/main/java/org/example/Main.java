@@ -5,6 +5,6 @@ public class Main {
         System.out.println("Hello world!");
     }
     public static String calc(String input) {
-        return ";";
+        return "";
     }
 }
