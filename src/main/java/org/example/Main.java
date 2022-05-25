@@ -5,14 +5,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Main {
-    public static void main(String[] args) {
-        try {
-            System.out.println(calc("V - I"));
-        } catch (Exception e) {
-            System.out.println("sad");
-        }
-
-
+    public static void main(String[] args) throws Exception {
+        calc("1 + 3");
     }
     static boolean isInputCorrect(String str){
         try {
@@ -41,7 +35,7 @@ public class Main {
         boolean correctInput = isInputCorrect(input);
         if (!correctInput) throw new Exception();
         String[] operators = input.split(" ");
-        Pattern arabicPattern = Pattern.compile("[1-9]");
+        Pattern arabicPattern = Pattern.compile("[1-9]0?");
         Matcher arabicMatcher = arabicPattern.matcher(operators[0]);
         int a = 0, b = 0, result = 0;
         boolean isNumbersArabic = false;
@@ -60,7 +54,6 @@ public class Main {
             case "*" -> result = a * b;
             case "/" -> result = a / b;
         }
-        System.out.println(isNumbersArabic);
         if (isNumbersArabic) {
             return "" + result;
         } else {
@@ -70,7 +63,7 @@ public class Main {
     }
 
     static String fromArabicToRoman(int n) throws Exception{
-        if (n < 0) {
+        if (n <= 0) {
             throw new Exception();
         }
         int[] arabicRepresentation = {100,90,50,40,10,9,5,4,1};
