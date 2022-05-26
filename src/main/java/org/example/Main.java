@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println("Enter valid arabic or roman numbers and operand [+ - / *].\n" +
+        System.out.println("Enter valid arabic or roman numbers and operand [+ - / *] in this format: [firstNumber operand secondNumber].\n" +
                 "Numbers should be in range between [1-10] and [I - X] inclusive.\n" +
                 "For example: \n" +
                 "4 + 7");
