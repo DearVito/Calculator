@@ -1,12 +1,20 @@
 package org.example;
 
-import java.util.List;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 public class Main {
     public static void main(String[] args) throws Exception {
-        calc("1 + 3");
+        System.out.println("Enter valid arabic or roman numbers and operand [+ - / *].\n" +
+                "Numbers should be in range between [1-10] and [I - X] inclusive.\n" +
+                "For example: \n" +
+                "4 + 7");
+        Scanner sc = new Scanner(System.in);
+        String inputString = sc.nextLine();
+        System.out.println(calc(inputString));
+        sc.close();
     }
     static boolean isInputCorrect(String str){
         try {
